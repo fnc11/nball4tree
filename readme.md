@@ -18,30 +18,30 @@ $ pip install -r requirements.txt
 
 # Experiment 1:  Training and evaluating nball embeddings
 ## Experiment 1.1: Training nball embeddings
-* [datasets for training nball embeddings](https://drive.google.com/file/d/1V2kBNgxDzFBznkd97UuwDW0OtionpP6y/view?usp=sharing)
-* download glove.6B.50d.txt from the GloVe webpage https://nlp.stanford.edu/projects/glove/ 
-* shell command for running the nball construction and training process
+* For Hindi data generation follow instructions in the hindinballs directory.
+* Files used for Hindi data generation are taken from this github repo[https://bitbucket.org/sivareddyg/python-hindi-wordnet/src/master/] which mainly took data from IIT Bombay University[http://www.cfilt.iitb.ac.in/]. 
+* You need to download w2v from this website[https://fasttext.cc/docs/en/crawl-vectors.html] and make sure you remove first line of this file as it contains information about number of words and dimensions.
 ```
 % you need to create an empty file nball.txt for output
 
-$ python nball.py --train_nball /Users/<user-name>/data/glove/nball.txt --w2v /Users/<user-name>/data/glove/glove.6B.50d.txt  --ws_child /Users/<user-name>/data/glove/wordSenseChildren47634.txt  --ws_catcode /Users/<user-name>/data/glove/glove.6B.catcode.txt  --log log.txt
+$ python nball.py --train_nball /Users/<user-name>/data/nball.txt --w2v /Users/<user-name>/data/cc.hi.300.vec  --ws_child /Users/<user-name>/data/wordSenseChildren.txt  --ws_catcode /Users/<user-name>/data/glove/catCodes.txt  --log log.txt
 % --train_nball: output file of nball embeddings
 % --w2v: file of pre-trained word embeddings
 % --ws_child: file of parent-children relations among word-senses
 % --ws_catcode: file of the parent location code of a word-sense in the tree structure
 % --log: log file, shall be located in the same directory as the file of nball embeddings
 ```
-The training process can take around 6.5 hours. 
+The training process can take around 3 days. 
 
 
 ## Experiment 1.2: Checking whether tree structures are perfectly embedded into word-embeddings
 * main input is the output directory of nballs created in Experiment 1.1
 * shell command for running the nball construction and training process
 ```
-$ python nball.py --zero_energy <output-path> --ball <output-file> --ws_child /Users/<user-name>/data/glove/wordSenseChildren.txt
-% --zero_energy <output-path> : output path of the nballs of Experiment 1.1, e.g. ```/Users/<user-name>/data/glove/data_out```
+$ python nball.py --zero_energy <output-path> --ball <output-file> --ws_child /Users/<user-name>/data/wordSenseChildren.txt
+% --zero_energy <output-path> : output path of the nballs of Experiment 1.1, e.g. ```/Users/<user-name>/data/data_out```
 % --ball <output-file> : the name of the output nball-embedding file
-% --ws_child /Users/<user-name>/data/glove/wordSenseChildren.txt: file of parent-children relations among word-senses
+% --ws_child /Users/<user-name>/data/wordSenseChildren.txt: file of parent-children relations among word-senses
 ```
 The checking process can take around 2 hours.
 * result
@@ -61,7 +61,7 @@ otherwise, failed relations and word-senses will be printed.
 # Experiment 2: Observe neighbors of word-sense using nball embeddings
 * [pre-trained nball embeddings](https://drive.google.com/file/d/176FZwSaLB2MwTOWRFsfxWxMmJKQfoFRw/view?usp=sharing)
 ```
-$ python nball.py --neighbors beijing.n.01 berlin.n.01  --ball /Users/<user-name>/data/glove/glove.6B.50Xball.V10.txt  --num 6
+$ python nball.py --neighbors beijing.n.01 berlin.n.01  --ball /Users/<user-name>/data/data_out/  --num 6
 % --neighbors: list of word-senses
 % --ball: file location of the nball embeddings
 % --num: number of neighbors
