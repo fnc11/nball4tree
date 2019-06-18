@@ -43,14 +43,14 @@ $ python nball.py --zero_energy <output-path> --ball <output-file> --ws_child /U
 % --ball <output-file> : the name of the output nball-embedding file
 % --ws_child /Users/<user-name>/data/wordSenseChildren.txt: file of parent-children relations among word-senses
 ```
-The checking process can take around 2 hours.
+The checking process can take a very long time around 3-4 hours.
 * result
 
 If zero-energy is achieved, a big nball-embedding file will be created ```<output-path>/<output-file>```
 otherwise, failed relations and word-senses will be printed.
 
 ** Test result at Ubuntu platform:
-![](https://github.com/gnodisnait/nball4tree/blob/master/pic/ubuntu_result.jpeg)
+![](https://github.com/fnc11/nball4tree/blob/master/pic/ubuntu_result.jpeg)
  
 - [nball embeddings with 67152 balls](https://drive.google.com/file/d/1TC5h8PXKQz4rQ4hsFYlWSFsyuoxlkutf/view?usp=sharing)
 
@@ -65,7 +65,7 @@ $ python nball.py --neighbors beijing.n.01 berlin.n.01  --ball /Users/<user-name
 
 * Results of nearest neighbors look like below:
 
- <a href="url"><img src="https://github.com/gnodisnait/nball4tree/blob/master/pic/nbneighbors.png"   height="700" width="500" ></a></p>
+ <a href="url"><img src="https://github.com/fnc11/nball4tree/blob/master/pic/nbnbneighbors.jpeg"   height="700" width="500" ></a></p>
 
 # Cite
 
