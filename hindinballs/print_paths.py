@@ -2,7 +2,7 @@ import pickle
 
 # Loading input dictionaries
 word2synsets = pickle.load(open("data/WordSynsetDict.pk", 'rb'))
-#synset2words = pickle.load(open("data/SynsetWords.pk", 'rb'))
+# synset2words = pickle.load(open("data/SynsetWords.pk", 'rb'))
 synset2hypes = pickle.load(open("data/SynsetHypernym.pk", 'rb'))
 
 # All the paths from the leaf/word to root will be printed in tree_struct.txt
@@ -10,7 +10,7 @@ tree_struct = open("data/tree_struct.txt", 'w+')
 
 """
 This function assigns one special char to each word type in the wordnet. 
-	1: n (noun), 2: j (Adjective), 3: v (verb), 4: a (Adverb)
+    1: n (noun), 2: j (Adjective), 3: v (verb), 4: a (Adverb)
 """
 
 
@@ -51,7 +51,7 @@ with open("data/wordEmbs.txt", 'r') as emb_word_f, open("data/sets2remove.txt", 
         # print(normword)
         # check if the words from wordnet are present in the embedding words
         if normword in bwords:
-            print("prs")
+            # print("prs")
             # count += 1
             for typ, lis in value.items():
                 for i in range(0, len(lis)):
@@ -59,7 +59,7 @@ with open("data/wordEmbs.txt", 'r') as emb_word_f, open("data/sets2remove.txt", 
                     to_keep.add(lis[i])
         else:
             wordsto_remove.append(word)
-            print("abs")
+            # print("abs")
             for typ, lis in value.items():
                 for i in range(0, len(lis)):
                     to_remove.add(lis[i])

@@ -1,4 +1,4 @@
-from util import Tree
+from hindinballs.util import Tree
 
 root = Tree("root")
 allNodes = {"root": root}
@@ -109,73 +109,74 @@ with open("data/sameLevelWords.txt", "w") as slw:
         slw.write("\n\n")
 
 
-
-
 # printing cat codes of all the words in a file
-with open("data/catCodes.txt", "w") as ctcd:
-    # count = 0
-    # A dictionary to hold all the words whose cat_codes are already generated
-    cat_printed = {}
-    for path in clean_paths:
-        tokens = path.split("<-")
-        num_of_tokens = len(tokens)
+def print_catcodes():
+    with open("data/catCodes.txt", "w") as ctcd:
+        # count = 0
+        # A dictionary to hold all the words whose cat_codes are already generated
+        cat_printed = {}
+        for path in clean_paths:
+            tokens = path.split("<-")
+            num_of_tokens = len(tokens)
 
-        for j in range(0, num_of_tokens):
-            leaf = tokens[j]
-            if leaf in set2Word.keys():
-                leaf = set2Word[leaf]
-            if leaf not in cat_printed:
-                cat_printed[leaf]=True
-                sen = ""
-                slen = 0
-                for i in range(j, num_of_tokens):
-                    if j==0 and i==1:
-                        slen = 1
-                        continue
-                    word = tokens[i]
-                    if word in set2Word.keys():
-                        word = set2Word[word]
-                    if word in word2Set.keys():
-                        sen = str(setOrderNum[word2Set[word]])+" "+sen
-                    # discussion need to be done here
-                    elif word in setOrderNum.keys():
-                        # count += 1
-                        sen = str(setOrderNum[word])+" "+sen
-                    else:
-                        print("Evil case")
-                        continue
-                # root order for every word
-                # need to add special case for root*
-                sen = "1 "+sen.strip()
-                for k in range(0, 13-(num_of_tokens-j-slen)):
-                    sen += " 0"
-                ctcd.write(leaf+" "+sen+"\n")
-    # print(count)
-
-
+            for j in range(0, num_of_tokens):
+                leaf = tokens[j]
+                if leaf in set2Word.keys():
+                    leaf = set2Word[leaf]
+                if leaf not in cat_printed:
+                    cat_printed[leaf]=True
+                    sen = ""
+                    slen = 0
+                    for i in range(j, num_of_tokens):
+                        if j==0 and i==1:
+                            slen = 1
+                            continue
+                        word = tokens[i]
+                        if word in set2Word.keys():
+                            word = set2Word[word]
+                        if word in word2Set.keys():
+                            sen = str(setOrderNum[word2Set[word]])+" "+sen
+                        # discussion need to be done here
+                        elif word in setOrderNum.keys():
+                            # count += 1
+                            sen = str(setOrderNum[word])+" "+sen
+                        else:
+                            print("Evil case")
+                            continue
+                    # root order for every word
+                    # need to add special case for root*
+                    sen = "1 "+sen.strip()
+                    for k in range(0, 13-(num_of_tokens-j-slen)):
+                        sen += " 0"
+                    ctcd.write(leaf+" "+sen+"\n")
+        # print(count)
 
 
 # root.printTree()
 # printing word sense children file as English
-with open("data/wordSenseChildren.txt","w") as wsc:
-    stck = [root]
-    while (True):
-        if len(stck) != 0:
-            temp = stck.pop(0)
+def print_word_senses():
+    with open("data/wordSenseChildren.txt","w") as wsc:
+        stck = [root]
+        while (True):
+            if len(stck) != 0:
+                temp = stck.pop(0)
 
-            if temp.name in set2Word.keys():
-                wsc.write(set2Word[temp.name])
+                if temp.name in set2Word.keys():
+                    wsc.write(set2Word[temp.name])
+                else:
+                    wsc.write(temp.name)
+
+                if len(temp.children) > 0:
+                    for child in temp.children:
+                        stck.insert(0, child)
+                        if child.name in set2Word.keys():
+                            wsc.write(" "+set2Word[child.name])
+                        else:
+                            wsc.write(" "+child.name)
+
+                wsc.write("\n")
             else:
-                wsc.write(temp.name)
+                break
 
-            if len(temp.children) > 0:
-                for child in temp.children:
-                    stck.insert(0, child)
-                    if child.name in set2Word.keys():
-                        wsc.write(" "+set2Word[child.name])
-                    else:
-                        wsc.write(" "+child.name)
-
-            wsc.write("\n")
-        else:
-            break
+print_catcodes()
+print_word_senses()
