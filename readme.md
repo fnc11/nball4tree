@@ -71,47 +71,6 @@ $ python nball.py --neighbors beijing.n.01 berlin.n.01  --ball /Users/<user-name
 
  <a href="url"><img src="https://github.com/gnodisnait/nball4tree/blob/master/pic/nbneighbors.png"   height="700" width="500" ></a></p>
 
-# Experiment 3: Consistency analysis
-
-## deviation of word-stems
-* [datasets for analyzing deviation of word-stems](https://drive.google.com/file/d/17H2bDIopjyAYjk61GOle_hvVDvtxKN64/view?usp=sharing)
-
-* shell command for running the experiment
-```
-$ python nball.py  --std_stem /Users/<user-name>/data/glove/wordstem.std --dim 50 --w2v /Users/<user-name>/data/glove/glove.6B.50d.txt --ballStemFile /Users/<user-name>/data/glove/glove.6B.50Xball.words --ball /Users/<user-name>/data/glove/glove.6B.50Xball.V10.txt
-```
-* Result of consistency analysis
-
-<a href="url"><img src="https://github.com/gnodisnait/nball4tree/blob/master/pic/std0.pnd"  height="400" width="500" ></a></p>
-
-# Experiment 4: Validating unknown word-senses or words
-
-* [datasets for validating unknown word-sense or words](https://drive.google.com/file/d/1JN8eXzjTGsQDi079ZQXqhYu__N2pVQ_w/view?usp=sharing)
-* shell command for running the experiment
-```
-$ python nball.py  --validate_member /Users/<user-name>/data/glove/memberValidation/membershipPredictionResult.txt \
-                    --numOfChild 10  --percentages 5 10 20 30 40 50 60 70 80 90  \
-                    --taskFiles /Users/<user-name>/data/glove/memberValidation/membershipPredictionTask.txt \
-                    --w2v /Users/<user-name>/data/glove/glove.6B.50d.txt \
-                    --ws_child /Users/<user-name>/data/glove/wordSenseChildren.txt  \
-                    --ws_path /Users/<user-name>/data/glove/wordSensePath.txt \
-                    --ws_catcode /Users/<user-name>/data/glove/glove.6B.catcode.txt \
-                    --logPath /Users/<user-name>/data/glove/logMemberValidate
-```
-
-* command for viewing the result of validating unknown word-sense or word
-```
-$ python nball.py  --plot_validate_member /Users/<user-name>/data/glove/memberValidation/membershipPredictionResult.txt      --numOfChild 10       --percentages 5 10 20 30 40 50 60 70 80 90
-```
-
-* Precision of validating the category of unknown words
-
-<a href="url"><img src="https://github.com/gnodisnait/nball4tree/blob/master/pic/precision.png"  height="400" width="500" ></a></p>
-
-* Recall of validating the category of unknown words
-
-<a href="url"><img src="https://github.com/gnodisnait/nball4tree/blob/master/pic/recall.png"  height="400" width="500" ></a></p>
-
 # Cite
 
 If you use the code, please cite the following paper:
