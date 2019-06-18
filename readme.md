@@ -65,7 +65,7 @@ $ python nball.py --neighbors beijing.n.01 berlin.n.01  --ball /Users/<user-name
 
 * Results of nearest neighbors look like below:
 
- <a href="url"><img src="https://github.com/fnc11/nball4tree/blob/master/pic/nbneighbors.jpeg"   height="700" width="500" ></a></p>
+ <a href="url"><img src="https://github.com/fnc11/nball4tree/blob/master/pic/nbneighbours.jpeg"   height="700" width="500" ></a></p>
 
 # Cite
 
