@@ -6,7 +6,7 @@ Created on Sat May  4 12:13:07 2019
 @author: lab-mueller
 """
 
-with open("/home/lab-mueller/Documents/AILab/cc.hi.300.vec",'r') as vec, open("/home/lab-mueller/Documents/AILab/wordEmbs.txt",'w') as word_embs:
+with open("/home/lab-mueller/Documents/AILab/cc.hi.300.vec",'r') as vec, open("data/wordEmbs.txt",'w') as word_embs:
     cont = vec.read()
     lines = cont.split('\n')
     for line in lines:

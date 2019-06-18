@@ -1,12 +1,12 @@
 import pickle
 
 # Loading input dictionaries
-word2synsets = pickle.load(open("WordSynsetDict.pk", 'rb'))
-#synset2words = pickle.load(open("SynsetWords.pk", 'rb'))
-synset2hypes = pickle.load(open("SynsetHypernym.pk", 'rb'))
+word2synsets = pickle.load(open("data/WordSynsetDict.pk", 'rb'))
+#synset2words = pickle.load(open("data/SynsetWords.pk", 'rb'))
+synset2hypes = pickle.load(open("data/SynsetHypernym.pk", 'rb'))
 
 # All the paths from the leaf/word to root will be printed in tree_struct.txt
-tree_struct = open("tree_struct.txt", 'w+')
+tree_struct = open("data/tree_struct.txt", 'w+')
 
 """
 This function assigns one special char to each word type in the wordnet. 
@@ -38,7 +38,7 @@ to_keep = set()
 
 # embwords.txt contains all the words which are present in the Hindi Word embeddings file
 # sets2remove.txt contains all the synsets which needs to be removed from the Hindi Wordnet
-with open("/home/lab-mueller/Documents/AILab/wordEmbs.txt", 'r') as emb_word_f, open("sets2remove.txt", 'w') as inspectf:
+with open("data/wordEmbs.txt", 'r') as emb_word_f, open("data/sets2remove.txt", 'w') as inspectf:
     embedding_content = emb_word_f.read()
     bwords = embedding_content.split("$")
     print(len(bwords))
@@ -164,7 +164,7 @@ for word, value in word2synsets.items():
 print("Total sets removed:{}".format(count))
 tree_struct.write("root")
 
-with open("set2WordV.txt", 'w') as s2w:
+with open("data/set2WordV.txt", 'w') as s2w:
     for set, values in modernSyn2Words.items():
         s2w.write(str(set) + ":" + values[0] + "$")
     s2w.write("root:root")

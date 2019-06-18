@@ -6,7 +6,7 @@ allNodes = {"root": root}
 set2Word = {}
 word2Set = {}
 
-with open("set2WordV.txt","r") as s2w:
+with open("data/set2WordV.txt","r") as s2w:
     cont = s2w.read()
     sets = cont.split("$")
     for set in sets:
@@ -19,7 +19,7 @@ with open("set2WordV.txt","r") as s2w:
 # final cleansing of the paths
 paths = []
 clean_paths = []
-with open("tree_struct.txt", 'r') as tree_struct:
+with open("data/tree_struct.txt", 'r') as tree_struct:
     struct_cont = tree_struct.read()
     paths = struct_cont.split("$")
     # count = 0
@@ -82,7 +82,7 @@ with open("tree_struct.txt", 'r') as tree_struct:
 # Now replace set in the levelDict with word and sort them, and replace the -1 in the wordAndOrderDict
 # with correct place
 setOrderNum = {'root': 1 }
-with open("sameLevelWords.txt", "w") as slw:
+with open("data/sameLevelWords.txt", "w") as slw:
     stck =[root]
     while(True):
         if len(stck) != 0:
@@ -112,7 +112,7 @@ with open("sameLevelWords.txt", "w") as slw:
 
 
 # printing cat codes of all the words in a file
-with open("catCodes.txt", "w") as ctcd:
+with open("data/catCodes.txt", "w") as ctcd:
     # count = 0
     # A dictionary to hold all the words whose cat_codes are already generated
     cat_printed = {}
@@ -157,7 +157,7 @@ with open("catCodes.txt", "w") as ctcd:
 
 # root.printTree()
 # printing word sense children file as English
-with open("wordSenseChildren.txt","w") as wsc:
+with open("data/wordSenseChildren.txt","w") as wsc:
     stck = [root]
     while (True):
         if len(stck) != 0:
