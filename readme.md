@@ -66,44 +66,50 @@ $ python nball.py --neighbors दिल्ली.n.01 फिलीपीन्�
 
 * Results of nearest neighbors look like below:
 
-{   'दिल्ली.n.01': [   'पटना.n.01',  
+{   'दिल्ली.n.01':
+ [   'पटना.n.01',  
         'देहली.n.01',  
         'कोलकाता.n.01',  
         'बंगलूर.n.01',  
         'त्रिवेंद्रम.n.01',  
         'बंगलुरु.n.01'],  
-    'फिलीपीन्स.n.01': [   'फिलीपींस.n.01',
-                          'फिलिपीन्स.n.01',
-                          'फिलिपींस.n.01',
-                          'बोसनिया.n.01',
-                          'बोट्सवाना.n.01',
-                          'मलयेशिया.n.01'],
-    'मंगलवार.n.01': [   'बुधवार.n.01',
-                        'सोमवार.n.01',
-                        'शुक्रवार.n.01',
-                        'शनिवार.n.01',
-                        'गुरुवार.n.01',
-                        'रविवार.n.01']}
+    'फिलीपीन्स.n.01': 
+ [   'फिलीपींस.n.01',  
+                          'फिलिपीन्स.n.01',  
+                          'फिलिपींस.n.01',  
+                          'बोसनिया.n.01',  
+                          'बोट्सवाना.n.01',  
+                          'मलयेशिया.n.01'],  
+    'मंगलवार.n.01': 
+ [   'बुधवार.n.01',  
+                        'सोमवार.n.01',  
+                        'शुक्रवार.n.01',  
+                        'शनिवार.n.01',  
+                        'गुरुवार.n.01',  
+                        'रविवार.n.01']}  
 
 English Translation:
-{ ‘Delhi.n.01’: [   ‘Patna.n.01’,
-		‘Delhi.n.01’,  <----- Different written form of Delhi in Hindi
-		‘Kolkata.n.01’
-		‘Bangalur.n.01’,
-		‘Trivandrum.n.01’,
-		‘Bangaluru.n.01’],
-‘Philippines.n.01’: [   ‘Philippines.n.01’,  <----- Different written form of Philippines in Hindi
-		      ‘Philippines.n.01’,  <----- Different written form of Philippines in Hindi
-		      ‘Philippines.n.01’,  <----- Different written form of Philippines in Hindi
-		      ‘Bosnia.n.01’,
-		      ‘Botswana.n.01’,
-		      ‘Malaysia.n.01’],
-‘Tuesday.n.01’: [   ‘Wednesday.n.01’,
-		      ‘Monday.n.01’,
-		      ‘Friday.n.01’,
-		      ‘Saturday.n.01’,
-		      ‘Thrusday.n.01’,
-		      ‘Sunday.n.01’]}
+{ ‘Delhi.n.01’: 
+ [   ‘Patna.n.01’,  
+		‘Delhi.n.01’,  <----- Different written form of Delhi in Hindi  
+		‘Kolkata.n.01’  
+		‘Bangalur.n.01’,  
+		‘Trivandrum.n.01’,  
+		‘Bangaluru.n.01’],  
+‘Philippines.n.01’: 
+ [   ‘Philippines.n.01’,  <----- Different written form of Philippines in Hindi  
+		      ‘Philippines.n.01’,  <----- Different written form of Philippines in Hindi  
+		      ‘Philippines.n.01’,  <----- Different written form of Philippines in Hindi  
+		      ‘Bosnia.n.01’,  
+		      ‘Botswana.n.01’,  
+		      ‘Malaysia.n.01’],  
+‘Tuesday.n.01’: 
+ [   ‘Wednesday.n.01’,  
+		      ‘Monday.n.01’,  
+		      ‘Friday.n.01’,  
+		      ‘Saturday.n.01’,  
+		      ‘Thrusday.n.01’,  
+		      ‘Sunday.n.01’]}  
 
 
 # Cite
