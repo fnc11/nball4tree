@@ -1,6 +1,6 @@
 # hindinballs
 Data generation steps:
-1. Please go through this informative report [https://drive.google.com/file/d/1RaBVGAmJoC-dQThnSylH0rF7QxTdxW9h/view?usp=sharing] on how the Hindi Data is structured and how to process it to make it useful for this experiment.
+1. Please go through this [Informative Report](https://drive.google.com/file/d/1RaBVGAmJoC-dQThnSylH0rF7QxTdxW9h/view?usp=sharing) on how the Hindi Data is structured and how to process it to make it useful for this experiment.
 2. First extract words from word2vector file, so that we can filter out the word from our database for which we don't have the vectors.
 * use word_extraction.py file for that.
 * since the size of w2v file is large(4 GB), it's already done here.
