@@ -5,7 +5,7 @@ Data generation steps:
 * use word_extraction.py file for that.
 * since the size of w2v file is large(4 GB), it's already done here.
 
-3. Download these three packages from the mentioned repository[https://bitbucket.org/sivareddyg/python-hindi-wordnet/src/master/], 
+3. Download these three packages from the mentioned [repository](https://bitbucket.org/sivareddyg/python-hindi-wordnet/src/master/), 
 WordSynsetDict.pk, SynsetHypernym.pk, SynsetWords.pk(this can be skipped). These are also available in data folder.
 
 4. Run the print_path.py file it will generate tree structure or paths from leaves to last parent.
