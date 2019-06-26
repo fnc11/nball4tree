@@ -59,7 +59,7 @@ otherwise, failed relations and word-senses will be printed.
 # Experiment 2: Observe neighbors of word-sense using nball embeddings
 * [pre-trained nball embeddings](https://drive.google.com/open?id=1d-D7AF9rl2g_QFAGLD-m3N0DT_5-uZLS)
 ```
-$ python nball.py --neighbors दिल्ली.n.01 फिलीपीन्स.n.01 मंगलवार.n.01 --ball /Users/<user-name>/data/data_out/  --num 6
+$ python nball.py --neighbors दिल्ली.n.01 फिलीपीन्स.n.01 मंगलवार.n.01 --ball /Users/<user-name>/data/nball.txt  --num 6
 % --neighbors: list of word-senses
 % --ball: file location of the nball embeddings
 % --num: number of neighbors
