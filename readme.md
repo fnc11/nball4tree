@@ -19,7 +19,7 @@ $ pip install -r requirements.txt
 # Experiment 1:  Training and evaluating nball embeddings
 ## Experiment 1.1: Training nball embeddings
 * For Hindi data generation follow instructions in the hindinballs directory.
-* Please also go through this [Informative Report](https://drive.google.com/file/d/1RaBVGAmJoC-dQThnSylH0rF7QxTdxW9h/view?usp=sharing) on how Hindi Data is structure and how to process it to use it for this experiment. 
+* Please also go through this [Informative Report](https://drive.google.com/file/d/1ZZXAsNJxBQygkfmtakVvHw2gkLCan0rR/view?usp=sharing) on how Hindi Data is structure and how to process it to use it for this experiment. 
 * Files used for Hindi data generation are taken from this [github repo](https://bitbucket.org/sivareddyg/python-hindi-wordnet/src/master/) which mainly took data from [IIT Bombay University.](http://www.cfilt.iitb.ac.in/) 
 * You need to download w2v from this [website](https://fasttext.cc/docs/en/crawl-vectors.html) and make sure you remove first line of this file as it contains information about number of words and dimensions.
 ```
